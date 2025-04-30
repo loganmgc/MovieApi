@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MovieApi.Application.Features.CQRSDesignPattern.Queries.MovieQueries;
+﻿using MovieApi.Application.Features.CQRSDesignPattern.Queries.MovieQueries;
 using MovieApi.Application.Features.CQRSDesignPattern.Results.MovieResults;
 using MovieApi.Persistence.Context;
 
@@ -34,4 +29,3 @@ namespace MovieApi.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers
         }
     }
 }
-  

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MovieApi.Application.Features.CQRSDesignPattern.Commands.MovieCommands;
+﻿using MovieApi.Application.Features.CQRSDesignPattern.Commands.MovieCommands;
 using MovieApi.Domain.Entities;
 using MovieApi.Persistence.Context;
 
@@ -30,6 +25,6 @@ namespace MovieApi.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers
                 Status = command.Status
             });
             await _context.SaveChangesAsync();
-        }   
+        }
     }
 }

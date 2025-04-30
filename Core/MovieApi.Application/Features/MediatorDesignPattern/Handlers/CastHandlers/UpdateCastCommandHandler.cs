@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using MovieApi.Application.Features.MediatorDesignPattern.Commands.CastCommands;
 using MovieApi.Persistence.Context;
 
@@ -12,12 +7,10 @@ namespace MovieApi.Application.Features.MediatorDesignPattern.Handlers.CastHandl
     public class UpdateCastCommandHandler : IRequestHandler<UpdateCastCommand>
     {
         private readonly MovieContext _context;
-
         public UpdateCastCommandHandler(MovieContext context)
         {
             _context = context;
         }
-
         public async Task Handle(UpdateCastCommand request, CancellationToken cancellationToken)
         {
             var value = await _context.Casts.FindAsync(request.CastId);

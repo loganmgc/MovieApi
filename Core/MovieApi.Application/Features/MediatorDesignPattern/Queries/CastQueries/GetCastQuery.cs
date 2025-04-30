@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using MovieApi.Application.Features.MediatorDesignPattern.Results.CastResults;
 
 namespace MovieApi.Application.Features.MediatorDesignPattern.Queries.CastQueries
 {
-    public class GetCastQuery: IRequest<List<GetCastQueryResult>>
+    public class GetCastQuery : IRequest<List<GetCastQueryResult>>
     {
-        public GetCastQuery(int tagId)
+        public GetCastQuery(int castId)
         {
-            TagId = tagId;
+            CastId = castId;
         }
-
-        public int TagId { get; set; }
+        public int CastId { get; set; }
     }
 }

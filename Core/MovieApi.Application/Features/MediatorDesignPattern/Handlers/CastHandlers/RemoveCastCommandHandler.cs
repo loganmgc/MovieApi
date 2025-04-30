@@ -1,23 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using MovieApi.Application.Features.MediatorDesignPattern.Commands.CastCommands;
 using MovieApi.Persistence.Context;
 
 namespace MovieApi.Application.Features.MediatorDesignPattern.Handlers.CastHandlers
 {
-    public class RemoveCastQueryHandler : IRequestHandler<RemoveCastCommand>
+    public class RemoveCastCommandHandler : IRequestHandler<RemoveCastCommand>
     {
         private readonly MovieContext _context;
-
-        public RemoveCastQueryHandler(MovieContext context)
+        public RemoveCastCommandHandler(MovieContext context)
         {
             _context = context;
         }
-
         public async Task Handle(RemoveCastCommand request, CancellationToken cancellationToken)
         {
             var value = await _context.Casts.FindAsync(request.CastId);
