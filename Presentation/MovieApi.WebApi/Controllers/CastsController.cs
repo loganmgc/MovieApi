@@ -16,37 +16,37 @@ namespace MovieApi.WebApi.Controllers
         }
 
         [HttpGet]
-        public IActionResult CastList()
+        public async Task<IActionResult> CastList()
         {
-            var values = _mediator.Send(new GetCastQuery());
+            var values = await _mediator.Send(new GetCastQuery());
             return Ok(values);
         }
 
         [HttpPost]
-        public IActionResult CreateCast(CreateCastCommand command)
+        public async Task<IActionResult> CreateCast(CreateCastCommand command)
         {
-            _mediator.Send(command);
+            await _mediator.Send(command);
             return Ok("Ekleme işlemi başarılı.");
         }
 
         [HttpDelete]
-        public IActionResult DeleteCast(int id)
+        public async Task<IActionResult> DeleteCast(int id)
         {
-            _mediator.Send(new RemoveCastCommand(id));
+            await _mediator.Send(new RemoveCastCommand(id));
             return Ok("Silme işlemi başarılı.");
         }
 
         [HttpPut]
-        public IActionResult UpdateCast(UpdateCastCommand command)
+        public async Task<IActionResult> UpdateCast(UpdateCastCommand command)
         {
-            _mediator.Send(command);
+            await _mediator.Send(command);
             return Ok("Güncelleme işlemi başarılı.");
         }
 
         [HttpGet("GetCast")]
-        public IActionResult GetCast(int id)
+        public async Task<IActionResult> GetCast(int id)
         {
-            var value = _mediator.Send(new GetCastByIdQuery(id));
+            var value = await _mediator.Send(new GetCastByIdQuery(id));
             return Ok(value);
         }
     }
