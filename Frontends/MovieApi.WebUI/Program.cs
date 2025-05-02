@@ -23,7 +23,7 @@ app.MapStaticAssets();
 app.MapControllerRoute(
     name: "default",
     //pattern: "{controller=Home}/{action=Index}/{id?}")
-    pattern: "{controller=UserWebUILayout}/{action=LayoutUI}/{id?}")
+    pattern: "{controller=Movie}/{action=MovieList}/{id?}")
     .WithStaticAssets();
 
 
